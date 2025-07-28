@@ -28,7 +28,7 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags, int argc, cons
 	char timebuf[64];
 	strftime(timebuf, sizeof(timebuf), "%Y-%m-%dT%H:%M:%S", tm_info);
     
-	FILE *log_file = fopen("/home/kaho/develop/AuthSpeedTracker/log/pamlog/pass.log", "a");
+	FILE *log_file = fopen("パス", "a");
 	if (log_file) {
 		fprintf(log_file, "IP: %s | Time: %s.%09ld \n", rhost, timebuf, ts.tv_nsec);
 		fclose(log_file);
