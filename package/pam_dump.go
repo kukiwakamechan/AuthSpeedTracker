@@ -14,7 +14,7 @@ import (
 )
 
 func GetPasswordEnterTime(serverIP net.IP, clientIP net.IP, pamTimestamp time.Time) {
-    const dirpath = "/home/kaho/develop/AuthSpeedTracker/package/tcpdump/log/sh_log"
+    const dirpath = "ログ出力先パス"
 
     var requestPasswordPacket gopacket.Packet 
     var sendPasswordPacket gopacket.Packet
@@ -113,7 +113,7 @@ func GetPasswordEnterTime(serverIP net.IP, clientIP net.IP, pamTimestamp time.Ti
     // 差分計算・ログ書き込み
     diff := sendPasswordPacket.Metadata().Timestamp.Sub(requestPasswordPacket.Metadata().Timestamp) 
 
-    logPath := "/home/kaho/develop/AuthSpeedTracker/log/diff.log" // ログ出力先
+    logPath := "絶対パス/diff.log" // ログ出力先
     f, err := os.OpenFile(logPath, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
     if err != nil {
         log.Println("ログファイルのオープンに失敗：", err)
