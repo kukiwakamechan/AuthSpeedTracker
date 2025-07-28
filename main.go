@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	filename := "/home/kaho/develop/AuthSpeedTracker/log/pamlog/pass.log"
+	filename := "保存先ファイル"
 
 	backupFilename := filename + time.Now().Format("20060102150405") + ".log"
 	input, err := ioutil.ReadFile(filename)
